@@ -1,0 +1,57 @@
+
+	<br/> 
+	<br/>
+<div style="text-align:center">
+  
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  
+  
+	<br/>
+	<br/> 
+	<br/>
+  <br/>
+  
+		<table align="center">
+			<thead>
+				<tr>
+						<th>Id</th>
+					<th>Employee Name</th>
+					<th>Age</th>
+					<th>domain</th>
+					<th>Gender</th>
+					<th>Address</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let data of getData">
+						<td >{{data._id}}</td>
+					<td >{{data.employee_name}}</td>
+					<td >{{data.age}}</td>
+					<td >{{data.domain}}</td>
+					<td >{{data.gender}}</td>
+					<td >{{data.address}}</td>
+					
+				</tr>
+			</tbody>
+		</table>
+		
+		 
+	<br/>
+	<br/> 
+		
+		<h2>Search for emplyees</h2>
+		<form [formGroup]="inputForm">
+			<!-- <input type="text" name="search" id="search"  />
+		
+			<input type="submit" value="Search" /> -->
+			
+			<input class="form-control mr-sm-2" type="text"  id="search" formControlName="searchInput">
+            <input type="submit" value="Search" (click)="search()" />
+			
+
+		</form>
+	
+<router-outlet></router-outlet>
